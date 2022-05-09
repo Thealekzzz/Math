@@ -301,8 +301,8 @@ if (localStorage.getItem("N1") == null) {
 
 fillNumbers();
 
-// checkAnswer.addEventListener("click", checkHandler);
-checkAnswer.addEventListener("click", generateParticles);
+checkAnswer.addEventListener("click", checkHandler);
+// checkAnswer.addEventListener("click", generateParticles);
 
 answer.addEventListener("input", () => {
     answer.style.width = `${answer.value.length * 19 + 20}px`
