@@ -94,8 +94,8 @@ main {
 }
 
 .checkAnswer {
-    padding: 15px 20px;
-    width: 160px;
+    padding: 15px 30px;
+    /* width: 160px; */
 
     background-color: rgb(57, 206, 44);
     border-radius: 10px;
@@ -107,14 +107,25 @@ main {
 
     box-shadow: 0 0 50px rgba(57, 206, 44, .5);
     cursor: pointer;
-    transition: all .3s;
+    transition: all .2s;
     
 
 }
 
 .checkAnswer:hover {
-    background-color: rgb(48, 236, 31);
+    background-color: rgb(47, 221, 31);
 
+}
+
+.buttonCorrect, .buttonCorrect:hover {
+    background-color: rgb(6, 243, 113);
+    box-shadow: 0 0 50px rgba(6, 243, 113, .5);
+
+}
+
+.buttonIncorrect, .buttonIncorrect:hover {
+    background-color: rgb(233, 54, 22);
+    box-shadow: 0 0 50px rgba(233, 54, 22, .5);
 }
 
 .particle {
@@ -207,11 +218,11 @@ main {
     font-size: 16px;
 }
 
-.correct {
+.historyCorrect {
     color: rgb(0, 43, 0);
 }
 
-.incorrect {
+.historyIncorrect {
     color: #310101;
 }
 

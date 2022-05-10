@@ -72,38 +72,31 @@ function fillNumbers() {
 }
 
 function checkHandler() {
-    checkAnswer.removeEventListener("click", checkHandler);
-    checkAnswer.classList.add("unactive");
-
-    msg.style.transform = "translate(180px, 0)";
-    msg.style.opacity = "1";
-    
+    checkAnswer.removeEventListener("click", checkHandler);    
     history[history.length - 1][3].push(answer.value);
 
-
     setTimeout(() => {
-        msg.style.transform = "translate(180px, -30px)";
-        msg.style.opacity = "0";
-
         checkAnswer.addEventListener("click", checkHandler);
-        checkAnswer.classList.remove("unactive");
+        checkAnswer.classList.remove("buttonCorrect");
+        checkAnswer.classList.remove("buttonIncorrect");
+        checkAnswer.textContent = "Проверить";
 
     }, 1600);
 
     if (actionsFunc[actionNum]() == answer.value) {
+        // Если ответ верный
         tries = 3;
         history[history.length - 1][4] = "OK";
         correctAnsws++;
         localStorage.setItem("CoA", correctAnsws);
 
+        checkAnswer.classList.add("buttonCorrect");
+        checkAnswer.textContent = "Верно!";
+
         setTimeout(() => {
             generateParticles();
             
         }, 50);
-
-        msg.textContent = "Правильно!";
-        msg.classList.add("right");
-        msg.classList.remove("wrong");
 
         setTimeout(() => {
             generateData();
@@ -111,32 +104,33 @@ function checkHandler() {
             answer.value = "";
             answer.style.width = "100px";
             answer.focus();
-
-            msg.textContent = "";
-            msg.style.transform = "translate(180px, 30px)";
-
             
         }, 2000);
 
     } else {
+        // Если ответ неверный
         tries--;
+        checkAnswer.classList.add("buttonIncorrect");
+        let transforms = [-25, 10, -8, 5, -2, 0];
 
-        if (tries === 1) {
-            msg.textContent = `Не-а. Осталось ${tries} попытка`
+        transforms.forEach((elem, index) => {
+            setTimeout(() => {
+                checkAnswer.style.transform = `translateX(${elem}px)`
+            }, index * 100);
+        });
+
+        if (tries == 1) {
+            checkAnswer.textContent = `Осталось ${tries} попытка`;
         } else {
-            msg.textContent = `Не-а. Осталось ${tries} попытки`
+            checkAnswer.textContent = `Осталось ${tries} попытки`;
         }
 
-        msg.classList.add("wrong");
-        msg.classList.remove("right");
-
-        if (tries == 0) {
-            msg.textContent = "Попыток не осталось"
+        if (tries <= 0) {
             history[history.length - 1][4] = "NO";
             wrongAnsws++;
             localStorage.setItem("WrA", wrongAnsws);
 
-
+            checkAnswer.textContent = "Неверно";
         }
 
         setTimeout(() => {
@@ -144,10 +138,7 @@ function checkHandler() {
             answer.style.width = "100px";
             answer.focus();
 
-            msg.textContent = ""
-            msg.style.transform = "translate(180px, 30px)";
-
-            if (tries == 0) {
+            if (tries <= 0) {
                 // Попыток не осталось. Генерирую новые числа
                 generateData()
                 fillNumbers();
@@ -201,11 +192,11 @@ function drawHistory() {
                         break;
                 }
 
-                historyElem.classList.add("correct");
+                historyElem.classList.add("historyCorrect");
 
             } else {
                 text += "Не решено за 3 попытки";
-                historyElem.classList.add("incorrect");
+                historyElem.classList.add("historyIncorrect");
 
             }
 
@@ -264,7 +255,6 @@ let secondNumber = $(".secondNumber");
 let action = $(".action");
 let answer = $(".answer");
 let checkAnswer = $(".checkAnswer");
-let msg = $(".msg");
 let historyList = $(".historyList");
 let rightAnswers = $(".rightAnswers");
 let wrongAnswers = $(".wrongAnswers");
@@ -276,7 +266,7 @@ let actions = ["Divide.png", "Minus.png", "Multiply.png", "Plus.png"];
 let actionsFunc = [ (n1=firstNumberNum, n2=secondNumberNum) => n1 / n2, 
                     (n1=firstNumberNum, n2=secondNumberNum) => n1 - n2, 
                     (n1=firstNumberNum, n2=secondNumberNum) => n1 * n2, 
-                    (n1=firstNumberNum, n2=secondNumberNum) => n1 + n2];
+                    (n1=firstNumberNum, n2=secondNumberNum) => +n1 + +n2];
 
 let history = [];
 let correctAnsws = 0;
