@@ -8,9 +8,9 @@
 nav {
     height: 60px;
     padding: 0 100px;
-    /* background: linear-gradient(90deg, #1E4CEC 0%, #30AAEF 100%); */
+    background: linear-gradient(90deg, #1E4CEC 0%, #30AAEF 100%);
     /* background: linear-gradient(90deg, #04CE00 0%, #C3EC1E 100%); */
-    background-color: #310101;
+    /* background-color: #310101; */
 
     display: flex;
     align-items: center;
@@ -105,7 +105,7 @@ main {
     font-size: 14px;
     color: white;
 
-    box-shadow: 0 0 100px rgba(57, 206, 44, .5);
+    box-shadow: 0 0 50px rgba(57, 206, 44, .5);
     cursor: pointer;
     transition: all .3s;
     
@@ -191,12 +191,19 @@ main {
 .historyGroup {
     margin: 150px 0;
 
+}
+
+.historyGroup > h2 {
+    margin-bottom: 30px;
+}
+
+.historyList {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.historyGroup > div {
+.historyList > div {
     font-size: 16px;
 }
 

@@ -96,7 +96,10 @@ function checkHandler() {
         correctAnsws++;
         localStorage.setItem("CoA", correctAnsws);
 
-        generateParticles();
+        setTimeout(() => {
+            generateParticles();
+            
+        }, 50);
 
         msg.textContent = "Правильно!";
         msg.classList.add("right");
@@ -176,7 +179,7 @@ function clearData() {
 }
 
 function drawHistory() {
-    historyGroup.innerHTML = "";
+    historyList.innerHTML = "";
 
     history.forEach((elem, index) => {
         if (elem[4] != "SL") {
@@ -207,7 +210,7 @@ function drawHistory() {
             }
 
             historyElem.textContent = text;
-            historyGroup.appendChild(historyElem);
+            historyList.appendChild(historyElem);
             
         }
     });
@@ -262,7 +265,7 @@ let action = $(".action");
 let answer = $(".answer");
 let checkAnswer = $(".checkAnswer");
 let msg = $(".msg");
-let historyGroup = $(".historyGroup");
+let historyList = $(".historyList");
 let rightAnswers = $(".rightAnswers");
 let wrongAnswers = $(".wrongAnswers");
 let problemNumber = $(".problemNumber");
@@ -306,7 +309,7 @@ checkAnswer.addEventListener("click", checkHandler);
 
 answer.addEventListener("input", () => {
     answer.style.width = `${answer.value.length * 19 + 20}px`
-    console.log(answer.value[answer.value.length - 1]);
+    
     if (answer.value[answer.value.length - 1] == ",") {
         answer.value = answer.value.slice(0, answer.value.length - 1) + "."
     }
