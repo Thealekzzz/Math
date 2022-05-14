@@ -60,7 +60,7 @@ function fillNumbers() {
     
     action.setAttribute("src", `src/imgs/${actions[actionNum]}`);
 
-    problemNumber.textContent = `${history.length}.`;
+    problemNumber.textContent = `${history.length})`;
 
     localStorage.setItem("His", JSON.stringify(history));
     localStorage.setItem("N1", firstNumberNum);
