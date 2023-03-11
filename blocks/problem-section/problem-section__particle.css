@@ -1,0 +1,6 @@
+.problem-section__particle {
+    transition: all 1s;
+    position: absolute;
+    transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}

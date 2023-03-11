@@ -1,0 +1,14 @@
+.problem-section__answer {
+    height: 52px;
+    width: 100px;
+    /* background-color: #ECECEC; */
+    background-color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: bold;
+    transition: all .2s;
+}

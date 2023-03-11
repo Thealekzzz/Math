@@ -1,0 +1,5 @@
+.problem-section__history-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

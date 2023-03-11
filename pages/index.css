@@ -1,0 +1,41 @@
+@import url(../vendor/normalize.css);
+
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/container/container.css);
+@import url(../blocks/container/container_justify_sides.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/header__left.css);
+@import url(../blocks/header/header__logo.css);
+
+@import url(../blocks/lead/lead.css);
+@import url(../blocks/lead/lead__page-title.css);
+
+@import url(../blocks/problem-section/problem-section.css);
+@import url(../blocks/problem-section/problem-section__problem-wrapper.css);
+@import url(../blocks/problem-section/problem-section__number.css);
+@import url(../blocks/problem-section/problem-section__answer.css);
+@import url(../blocks/problem-section/problem-section__check-button.css);
+@import url(../blocks/problem-section/problem-section__counter-wrapper.css);
+@import url(../blocks/problem-section/problem-section__operation.css);
+@import url(../blocks/problem-section/problem-section__particle.css);
+@import url(../blocks/problem-section/problem-section__history-list.css);
+
+@import url(../blocks/problem-section/problem-section__answers.css);
+@import url(../blocks/problem-section/problem-section__answers_right.css);
+@import url(../blocks/problem-section/problem-section__answers_wrong.css);
+
+@import url(../blocks/problem-section/problem-section__history-item.css);
+@import url(../blocks/problem-section/problem-section__history-item-status.css);
+@import url(../blocks/problem-section/problem-section__history-item-status_right.css);
+@import url(../blocks/problem-section/problem-section__history-item-status_wrong.css);
+@import url(../blocks/problem-section/problem-section__history-item-problem.css);
+@import url(../blocks/problem-section/problem-section__history-item-steps.css);
+
+
+@import url(../blocks/history/history.css);
+
+
+
+

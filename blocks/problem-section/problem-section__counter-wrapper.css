@@ -1,0 +1,4 @@
+.problem-section__counter-wrapper {
+    display: flex;
+    gap: 20px;
+}

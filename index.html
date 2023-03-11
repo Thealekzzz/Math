@@ -6,59 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дроби</title>
 
-    <link rel="stylesheet" href="src/CSS/style.css">
+    <link rel="stylesheet" href="pages/index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <script src="src/JS/main.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
-<body>
-    <nav>
-        <div class="">Математика</div>
-    </nav>
-
-    <main>
-        <section class="header">
-            <div class="pageName">Десятичные дроби</div>
-            <div class="pageDesc">На этой странице собраны небольшие лёгкие упражнения на решение<br>математических задач с десятичными дробями</div>
-        </section>
-
-        <section class="mainField">
-            <div class="fiendwrapper">
-                <div class="problemNumber">1.</div>
-                <div class="firstNumber">10</div>
-                <!-- <div class="action"></div> -->
-                <img class="action" src="src/imgs/Multiply.png" alt="" srcset="" width="15px" height="15px">
-                <div class="secondNumber">0.35</div>
-                <div class="equal">=</div>
-                <input type="text" class="answer">
+<body class="page">
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__left">
+                <img src="./images/logo.svg" alt="Корень из икс, логотип." width="40px">
+                <p class="header__logo">Математика</p>
             </div>
+        </div>
+    </header>
 
-            <div class="checkGroup">
-                <button class="checkAnswer">Проверить</button>
-                <div class="particles">
-                    
+    <main class="main">
+        <div class="container">
+            <section class="lead">
+                <h1 class="lead__page-title">Десятичные дроби</h1>
+                <p class="lead__page-subtitle">На этой странице собраны небольшие лёгкие упражнения на решение<br>математических задач с десятичными дробями</p>
+            </section>
+    
+            <section class="problem-section">
+                <div class="problem-section__problem-wrapper">
+                    <span class="problem-section__number">1</span>
+                    <span class="problem-section__first-number">10</span>
+                    <img class="problem-section__operation" src="../images/Multiply.png" alt="" srcset="" width="15px" height="15px">
+                    <span class="problem-section__second-number">0.35</span>
+                    <span>=</span>
+                    <input type="text" class="problem-section__answer">
                 </div>
-            </div>
-
-            <div class="countersGroup">
-                <div class="rightAnswers">0</div>
-                <div class="wrongAnswers">0</div>
-            </div>
-
-            <div class="historyGroup">
-
-                <h2>История</h2>
-
-                <div class="historyList">
-
+    
+                <div class="problem-section__button-wrapper">
+                    <button class="problem-section__check-button">Проверить</button>
+                    <div class="problem-section__particles">
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
+    
+                <div class="problem-section__counter-wrapper">
+                    <span class="problem-section__answers problem-section__answers_right" title="Количество правильных ответов">0 верных</span>
+                    <span class="problem-section__answers problem-section__answers_wrong" title="Количество неправильных ответов">0 неверных</span>
+                </div>
+            </section>
+
+            <section class="history">
+                    <h2>История выполнения</h2>
+    
+                    <ul class="problem-section__history-list">
+
+                    </ul>
+            </section>
+
+        </div>
     </main>
+
+    <template id="history-item">
+        <li class="problem-section__history-item">
+            <div class="problem-section__history-item-status"></div>
+            <p class="problem-section__history-item-problem">23 * 5 = 324</p>
+            <p class="problem-section__history-item-steps">[ 3 попытки ]</p>
+        </li>
+    </template>
 </body>
 </html>
-
-<!-- 17 пикселей на символ в input'е -->

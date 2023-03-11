@@ -1,0 +1,8 @@
+.problem-section__history-item-status {
+    width: 6px;
+    height: 6px;
+
+    margin-bottom: 3px;
+
+    border-radius: 50%;
+}

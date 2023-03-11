@@ -1,0 +1,25 @@
+.problem-section__check-button {
+    padding: 15px 30px;
+
+    background-color: rgb(57, 206, 44);
+    border-radius: 5px;
+    border: none;
+
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+
+    box-shadow: 0 0 50px rgba(57, 206, 44, .3);
+    cursor: pointer;
+    transition: all .2s;
+
+}
+
+.problem-section__check-button:hover {
+    background-color: rgba(52, 187, 39, 0.945);
+}
+
+.problem-section__check-button:active {
+    background-color: rgba(45, 170, 34, 0.945);
+}
